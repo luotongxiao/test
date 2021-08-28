@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - uses: actions/checkout@v2
     - name: use Node.js 10.x
       uses: actions/setup-node@v1
       with:
@@ -19,6 +20,6 @@ jobs:
     - name: npm install
       run: |
         npm install
-    - name: node ../src/main.js
+    - name: node ./src/main.js
       run:  |
-        node ../src/main.js
+        node ./src/main.js
