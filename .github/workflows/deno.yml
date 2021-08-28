@@ -22,5 +22,8 @@ jobs:
     - name: node ./src/main.js
       env:
         password: ${{secrets.password}}
+        account: ${{secrets.account}}
+        temperature: ${{secrets.temperature}}
+        address: ${{secrets.address}}
       run:  |
         node ./src/main.js
