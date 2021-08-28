@@ -1,0 +1,22 @@
+name: nodejs start
+
+on: 
+  gollum: 
+  schedule: 
+      - cron: '45 21 * * *'
+
+jobs:
+  start:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: node ./src/main.js
+      env:
+        password: ${{secrets.password}}
+        account: ${{account}}
+        temperature: ${{temperature}}
+        address: ${{address}}
+      run:  |
+        node ./src/main.js
