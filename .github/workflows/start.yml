@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - name: npm install
+      run: |
+        npm install
     - uses: actions/checkout@v2
     - name: node ./src/main.js
       env:
