@@ -19,6 +19,6 @@ jobs:
     - name: npm install
       run: |
         npm install
-    - name: node ./src/main.js
+    - name: node ../src/main.js
       run:  |
-        node ./src/main.js
+        node ../src/main.js
