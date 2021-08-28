@@ -17,6 +17,7 @@ jobs:
       with:
         node-version: 10.x
     - name: npm install and do sign
+      env: password
       run: |
         npm install
         node ./src/main.js
