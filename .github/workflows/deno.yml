@@ -1,10 +1,10 @@
-name: nodejs tb autosign
+name: nodejs
 
 on: 
   push:
   gollum: 
   schedule: 
-      - cron: '45 21 * * *'
+      - cron: '02 16 * * *'
 
 jobs:
   one:
