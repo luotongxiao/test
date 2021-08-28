@@ -32,7 +32,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: 'Send mail'
-      uses: send/action-send-mail@master
+      uses: send/action-send-mail@v3
       with:
           server_address: smtp.139.com
           server_port: 465
