@@ -1,7 +1,6 @@
 name: nodejs tb autosign
 
 on: 
-  push:
   gollum: 
   schedule: 
       - cron: '45 21 * * *'
