@@ -21,5 +21,7 @@ jobs:
       run: |
         npm install
     - name: node ./src/main.js
+      env:
+        password: ${{secrets.password}}
       run:  |
         node ./src/main.js
