@@ -10,10 +10,10 @@ jobs:
   start1:
     runs-on: ubuntu-latest  
     steps:
+    - uses: actions/checkout@v2
     - name: npm install
       run: |
         npm install
-    - uses: actions/checkout@v2
         
   start2:
     needs: start1
