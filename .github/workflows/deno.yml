@@ -16,10 +16,9 @@ jobs:
       with:
           server_address: smtp.139.com
           server_port: 465
-          username: ${{secrets.MAIL_USERNAME}}
-          password: ${{secrets.MAIL_PASSWORD}}
+          username: 15766973191@139.com
+          password: bpqmtmk2A
           subject: 打卡
           body: success
           to: 15766973191@139.com
           from: GitHub Actions
-          content_type: text/html
