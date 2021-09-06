@@ -2,8 +2,8 @@ name: nodejs
 
 on: 
   gollum: 
-
-
+  schedule:
+    - cron: '02 16 * * SUN'
 
 jobs:
   job1:
