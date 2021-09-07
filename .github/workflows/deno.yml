@@ -2,6 +2,7 @@ name: nodejs
 
 on: 
   gollum: 
+  push:
   schedule:
     - cron: '02 16 * * SUN'
 
