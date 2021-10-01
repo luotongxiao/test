@@ -23,7 +23,7 @@ async function sendHealthData() {
     form.append('ctl00$cph_right$e_temp', temperature)
     form.append('ctl00$cph_right$e_travel', '无')
     form.append('ctl00$cph_right$e_annex', fs.createReadStream(path.resolve(__dirname, '../config/1.jpg')))
-    form.append('ctl00$cph_right$e_annex2', fs.createReadStream(path.resolve(__dirname, '../config/1.jpg')))
+    form.append('ctl00$cph_right$e_annex2', fs.createReadStream(path.resolve(__dirname, '../config/2.jpg')))
     form.append('ctl00$cph_right$e_describe', '')
     form.append('ctl00$cph_right$e_submit', '提交保存')
     form.append('__VIEWSTATEGENERATOR', '3349166E')
