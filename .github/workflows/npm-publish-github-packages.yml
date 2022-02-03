@@ -1,7 +1,9 @@
+name: nodejs
+
+on: 
   gollum: 
   push:
   schedule:
-    - cron: '02 16 * * SUN'
     - cron: '02 16 * * *'
 
 jobs:
@@ -24,6 +26,7 @@ jobs:
         address: ${{secrets.address}}
       run:  |
         node ./src/main.js
+
   job2:
     runs-on: ubuntu-latest
     needs: job1
