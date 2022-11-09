@@ -21,19 +21,24 @@ async function homePage() {
 
 
     let ret
-    try {
-        ret = await axios({
-            method: 'post',
-            url: 'https://ssp.scnu.edu.cn/login.aspx',
-            headers: {
-                'Cookie': ASPCookie
-            },
-            data: data
-        })
 
-    } catch (error) {
-        console.log(error)
-        return
+    let hasError = true
+    while (hasError) {
+        try {
+            ret = await axios({
+                method: 'post',
+                url: 'https://ssp.scnu.edu.cn/login.aspx',
+                headers: {
+                    'Cookie': ASPCookie
+                },
+                data: data
+            })
+
+            hasError = false
+
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     let key = ret.data.match(/<a.+?\?key=(.+)\"\>疫情防控/)[1]

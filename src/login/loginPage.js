@@ -1,15 +1,21 @@
 const axios = require('axios')
 
 async function getLoginPage() {
-    try {
-        var { data, headers } = await axios({
-            url: 'https://ssp.scnu.edu.cn/login.aspx'
-        })
+    let hasError = true
+    while (hasError) {
+        try {
+            var { data, headers } = await axios({
+                url: 'https://ssp.scnu.edu.cn/login.aspx'
+            })
+
+            hasError = false
+        }
+        catch (error) {
+            console.log(error)
+        }
     }
-    catch (error) {
-        console.log(error)
-        return
-    }
+
+
 
     let __VIEWSTATE = data.match(/id="__VIEWSTATE" value="(.+)" \/>/)[1]
     let __VIEWSTATEGENERATOR = data.match(/id="__VIEWSTATEGENERATOR" value="(.+)" \/>/)[1]

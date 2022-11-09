@@ -30,19 +30,29 @@ async function sendHealthData() {
     form.append('__EVENTVALIDATION', __EVENTVALIDATION)
 
     let formDataHeaderContentType = (form.getHeaders())['content-type']
-    axios({
-        method: 'post',
-        url: url,
-        headers: {
-            Cookie: ASPCookie,
-            'Content-Type': formDataHeaderContentType
-        },
-        data: form
-    }).then(res => {
-        console.log('success')
-    }, err => {
-        console.log('err')
-    })
+
+    let hasError = true
+    while (hasError) {
+        try {
+            axios({
+                method: 'post',
+                url: url,
+                headers: {
+                    Cookie: ASPCookie,
+                    'Content-Type': formDataHeaderContentType
+                },
+                data: form
+            })
+
+            hasError = false
+            console.log('success')
+
+
+        } catch (error) {
+            console.log(error)
+
+        }
+    }
 
 }
 
